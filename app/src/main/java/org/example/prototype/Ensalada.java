@@ -5,16 +5,21 @@ import java.math.BigDecimal;
 import org.example.modelo.TipoProducto;
 
 public class Ensalada extends ProductoBase {
-    public Ensalada(String id){
-        super(id, TipoProducto.ENSALADA, "Ensalada Sencilla", new BigDecimal("3.00"));
+
+    public Ensalada(String id) { 
+        this(id, "Ensalada sencilla", new BigDecimal("3.00"));
+
     }
 
-    private Ensalada(Ensalada otro, String nuevoId){
-        super(otro, nuevoId);
+    public Ensalada(String id, String descripcion, BigDecimal precioBase){
+        super(id, TipoProducto.ENSALADA, descripcion, precioBase);
+
     }
+
+
     @Override 
     public ProductoBase copiar(String nuevoId) { 
-        return new Ensalada(this, nuevoId);
+        return new Ensalada(nuevoId, this.descripcion, this.precioBase);
     }
 
 }
