@@ -1,5 +1,12 @@
 package org.example.decorator;
 
-public class Pepperoni {
+import java.math.BigDecimal;
+
+import org.example.modelo.Pedido;
+
+public class Pepperoni extends DecoradorIngrediente{
+    public Pepperoni(Pedido pedido){
+        super(pedido, "Pepperoni", new BigDecimal("1.10"));
+    }
 
 }
