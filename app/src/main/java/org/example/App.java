@@ -3,12 +3,28 @@
  */
 package org.example;
 
+import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
+
+import org.example.servicio.ServicioPedidos;
+import org.example.vista.VentanaPedidos;
+
 public class App {
     public String getGreeting() {
         return "Hello World!";
     }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+                try {
+            // Look and feel multiplataforma, para que se vean los colores de los botones
+            UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
+        } catch (Exception e) {
+            // si falla se usa el estilo por defecto
+        }
+
+        SwingUtilities.invokeLater(() -> {
+            ServicioPedidos servicio = new ServicioPedidos();
+            new VentanaPedidos(servicio).setVisible(true);
+        });
     }
 }
