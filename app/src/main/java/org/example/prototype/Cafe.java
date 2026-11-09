@@ -18,8 +18,4 @@ public class Cafe extends ProductoBase {
     public ProductoBase copiar(String nuevoId) {
         return new Cafe(nuevoId, this.descripcion, this.precioBase);
     }
-
-
-    
-
 }
