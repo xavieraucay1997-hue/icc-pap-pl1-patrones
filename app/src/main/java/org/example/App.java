@@ -6,6 +6,7 @@ package org.example;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
+import org.example.prototype.RegistroPrototipos;
 import org.example.servicio.ServicioPedidos;
 import org.example.vista.VentanaPedidos;
 
@@ -15,11 +16,18 @@ public class App {
     }
 
     public static void main(String[] args) {
-                try {
-            // Look and feel multiplataforma, para que se vean los colores de los botones
+
+        RegistroPrototipos registro = new RegistroPrototipos();
+        try {
+            registro.clonar("producto_que_no_existe", "P-999");
+        } catch (IllegalArgumentException e) {
+            System.out.println("¡Excepcion capturada con exito!: " + e.getMessage());
+        }
+        
+        try {
             UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
         } catch (Exception e) {
-            // si falla se usa el estilo por defecto
+  
         }
 
         SwingUtilities.invokeLater(() -> {
@@ -27,4 +35,6 @@ public class App {
             new VentanaPedidos(servicio).setVisible(true);
         });
     }
+
+    
 }

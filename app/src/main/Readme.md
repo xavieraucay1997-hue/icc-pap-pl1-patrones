@@ -1,7 +1,14 @@
 Fases iniciales 
 
-Mockup inicial ![alt text](image.png)
+## Mockup inicial 
 
-Mockup prototipo con IA
+![alt text](../assets/imag2e.png)
 
-![alt text](image-1.png)
+## Mockup prototipo con IA
+
+![alt text](../assets/image-1.png)
+
+## Version final 
+
+![alt text](../assets/image.png)
+
