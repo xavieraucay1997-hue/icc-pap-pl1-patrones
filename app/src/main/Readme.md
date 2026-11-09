@@ -12,3 +12,6 @@ Fases iniciales
 
 ![alt text](../assets/image.png)
 
+
+
+![alt text](../assets/RelacionesEntreClases.png)
